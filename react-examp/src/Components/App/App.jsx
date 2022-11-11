@@ -6,15 +6,11 @@ import Header from '../Header/Header';
 import Error from '../Error/Error';
 import Logout from '../Logout/Logout';
 import Single from '../Single/Single';
-import { useSelector } from 'react-redux';
 
 
 
 const App = () => {
     const navigate = useNavigate()
-
-
-
 
     useEffect(() => {
         if (!localStorage.getItem('token')) {
@@ -27,8 +23,8 @@ const App = () => {
             <Route path='/login' element={<Login />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='*' element={<Error />} />
-            <Route path='/:url' element={<Header />} />
-            <Route path='/:url/:id' element={<Single />} />
+            <Route path=':url' element={<Header />} />
+            <Route path=':url/:id' element={<Single />} />
             <Route index path='/' element={<Header />} />
         </Routes>
     )

@@ -3,17 +3,14 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import * as dayjs from 'dayjs'
 import './Single.scss'
-import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
 const Single = () => {
     const { posts } = useSelector((state) => state.post)
-    console.log('nimadur', posts)
 
     const { id } = useParams()
     return (
         <>
-            {/* <Header /> */}
             <section className="singlePage-section">
                 <div className="container">
                     {<div className="singlePage">
@@ -37,7 +34,7 @@ const Single = () => {
                     }
                 </div>
             </section>
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
